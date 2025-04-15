@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneo Pokémon Stadium 2 - Reglas Híbridas GSC ¡Definitivo!</title>
+    <title>Torneo Pokémon Stadium 2 - Reglas Híbridas GSC ¡Versión Final!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -75,6 +75,14 @@
             color: var(--color-link);
             font-weight: 700;
         }
+        h4 { /* Added style for H4 */
+             font-size: 1.1rem;
+             margin: 20px 0 10px;
+             color: var(--color-text);
+             font-weight: bold;
+             border-left: 3px solid var(--color-link);
+             padding-left: 10px;
+        }
         #descripcion-torneo { font-size: 1.2rem; margin-bottom: 25px; font-weight: 700;}
         section {
             background: var(--gradient-section);
@@ -124,7 +132,7 @@
             line-height: 1.6;
         }
         ol li::before {
-            content: counter(list-item) "."; /* Add this if you want numbers back on OL */
+            content: counter(list-item) ".";
             counter-increment: list-item;
             color: var(--color-accent);
             position: absolute;
@@ -133,9 +141,9 @@
             top: 0;
             font-weight: bold;
             line-height: 1.6;
-             padding-right: 8px; /* Space between number and text */
+             padding-right: 8px;
         }
-        ol { counter-reset: list-item; } /* Needed for OL counter */
+        ol { counter-reset: list-item; }
 
 
         .warning {
@@ -174,7 +182,7 @@
             border-top: 5px solid var(--color-accent);
             box-shadow: 0 -4px 12px var(--shadow-medium);
         }
-        .clause {
+        .clause { /* Used now for specific rule boxes */
             background-color: rgba(255, 204, 0, 0.15);
             border-radius: var(--border-radius);
             padding: 15px 20px;
@@ -236,7 +244,7 @@
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: var(--border-radius);
             padding: 18px;
-            width: 130px; /* Ajusta según necesidad para 6 por fila */
+            width: 130px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid var(--color-border);
             box-shadow: 3px 3px 6px var(--shadow-light);
@@ -281,22 +289,57 @@
         .prohibitions-table th { background-color: rgba(0, 0, 0, 0.4); color: var(--color-accent); font-family: 'Press Start 2P', cursive; font-size: 0.8rem; text-transform: uppercase; }
         .prohibitions-table tr:last-child td { border-bottom: none; }
         .prohibitions-table tr:hover { background-color: rgba(255, 255, 255, 0.08); }
-        .prohibitions-table td ul { margin-left: 0; padding-left: 0; margin-bottom: 0; list-style-type: none;} /* Apply list-style-type here too */
-        .prohibitions-table td li::before { content: '»'; left: 5px; top: 0; color: var(--color-link);} /* Adjusted position */
-        .prohibitions-table td li { padding-left: 25px; margin-bottom: 5px;} /* Adjusted padding */
+        .prohibitions-table td ul { margin-left: 0; padding-left: 0; margin-bottom: 0; list-style-type: none;}
+        .prohibitions-table td li::before { content: '»'; left: 5px; top: 0; color: var(--color-link);}
+        .prohibitions-table td li { padding-left: 25px; margin-bottom: 5px;}
 
         .btn-n {
             font-family: 'Arial', sans-serif; font-weight: bold; padding: 3px 8px; border-radius: 50%; margin: 0 3px; display: inline-block; line-height: 1; text-align: center; color: white; border: 1px solid rgba(0,0,0,0.5); box-shadow: 1px 1px 2px rgba(0,0,0,0.3); min-width: 20px;
         }
-        .btn-n.a { background-color: #27ae60; } /* Slightly different Green A */
-        .btn-n.b { background-color: #c0392b; } /* Slightly different Red B */
+        .btn-n.a { background-color: #27ae60; }
+        .btn-n.b { background-color: #c0392b; }
         .btn-n.start { background-color: #7f8c8d; padding: 3px 10px; border-radius: 10px; }
-        .btn-n.z { background-color: #2980b9; } /* Slightly different Blue Z */
-        .btn-n.c { background-color: #f39c12; } /* Slightly different Yellow C */
+        .btn-n.z { background-color: #2980b9; }
+        .btn-n.c { background-color: #f39c12; }
         .dpad-icon { font-size: 1.3em; line-height: 1; margin: 0 3px; display: inline-block; color: #bdc3c7; text-shadow: 1px 1px 1px #2c3e50;}
 
-        @media (max-width: 992px) { /* Adjust breakpoint for 6 items */
-             .pokemon-example { width: 140px; } /* Allow more space if needed */
+        /* New block style for standard clauses */
+        .standard-clauses-block {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid var(--color-border);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        }
+        .standard-clauses-block p {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+        .standard-clauses-block p:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .standard-clauses-block .clause-title { /* Keep title styling */
+             display: inline-block;
+             margin-right: 8px;
+             font-size: 1em; /* Adjust size if needed */
+        }
+         .standard-clauses-block p::before { /* Optional icon for each clause */
+            content: '»';
+            color: var(--color-accent);
+            position: absolute;
+            left: 0;
+            top: 0;
+         }
+
+
+        @media (max-width: 992px) {
+             .pokemon-example { width: calc(16.66% - 15px); } /* Try to fit 6 */
         }
 
         @media (max-width: 768px) {
@@ -305,8 +348,8 @@
             section { padding: 20px; margin: 25px 0; }
             .button { width: 100%; padding: 16px; font-size: 1rem; }
             #header-banner-img { height: auto; border-width: 3px; }
-            .pokemon-examples { gap: 15px; } /* Adjust gap for smaller screens */
-             .pokemon-example { width: calc(33% - 15px); } /* 3 per row */
+            .pokemon-examples { gap: 15px; }
+             .pokemon-example { width: calc(33.33% - 10px); } /* 3 per row */
              .pokemon-example img { width: 60px; height: 60px; }
             .prohibitions-table th, .prohibitions-table td { padding: 10px 12px; font-size: 0.9rem;}
             .prohibitions-table th { font-size: 0.7rem; }
@@ -317,7 +360,7 @@
         @media (max-width: 576px) {
              .pokemon-example { width: calc(50% - 10px); } /* 2 per row */
              .pokemon-example img { width: 55px; height: 55px; }
-             li { padding-left: 25px; } li::before { left: 0px;} /* Adjust list icon position for mobile */
+             li { padding-left: 25px; } li::before { left: 0px;}
               ol li::before { left: 0px;}
         }
         @media (max-width: 480px) {
@@ -335,7 +378,7 @@
         .table-of-contents h3 { margin-top: 0; margin-bottom: 20px; color: var(--color-accent); font-family: 'Press Start 2P', cursive; font-size: 1.2rem; text-align: center; }
         .table-of-contents ul { list-style-type: none; margin-left: 0; padding-left: 0; }
         .table-of-contents li { margin-bottom: 12px; }
-        .table-of-contents li::before { content: '►'; font-size: 0.7em; top: 5px; color: var(--color-link);} /* Use different icon/color for TOC */
+        .table-of-contents li::before { content: '►'; font-size: 0.7em; top: 5px; color: var(--color-link);}
         .table-of-contents a { display: block; padding: 10px 18px; border-radius: 6px; transition: all 0.25s ease-in-out; font-weight: bold; background-color: rgba(255,255,255, 0.05); border: 1px solid transparent;}
         .table-of-contents a:hover { background-color: rgba(77, 166, 255, 0.2); transform: translateX(8px) scale(1.02); color: var(--color-link); text-decoration: none; border-color: var(--color-link); box-shadow: 3px 3px 5px var(--shadow-light);}
 
@@ -435,7 +478,7 @@
                 <p><span class="clause-title">Pokémon Permitidos:</span> #001 Bulbasaur a #251 Celebi (excepto los explícitamente prohibidos).</p>
             </div>
             <div class="clause">
-                <p><span class="clause-title">Movimientos Permitidos:</span> Solo los aprendibles legalmente en GSC (Nivel, MT/MO, Tutor, Crianza, Evento GSC). ¡Verifica en <a href="https://www.pkparaiso.com/pokedex-gsc.php" target="_blank" rel="noopener noreferrer">PkParaíso GSC</a>!</p>
+                <p><span class="clause-title">Movimientos Permitidos:</span> Solo los legales en GSC (Nivel, MT/MO, Tutor, Crianza, Evento GSC). ¡Verifica en <a href="https://www.pkparaiso.com/pokedex-gsc.php" target="_blank" rel="noopener noreferrer">PkParaíso GSC</a>!</p>
             </div>
             <div class="clause">
                 <p><span class="clause-title">Mecánicas Clave GSC:</span></p>
@@ -487,7 +530,7 @@
                 <div>
                     <span class="pokemon-type type-normal">Normal</span> <span class="pokemon-type type-fire">Fuego</span> <span class="pokemon-type type-water">Agua</span> <span class="pokemon-type type-grass">Planta</span> <span class="pokemon-type type-electric">Eléctrico</span> <span class="pokemon-type type-ice">Hielo</span> <span class="pokemon-type type-fighting">Lucha</span> <span class="pokemon-type type-poison">Veneno</span> <span class="pokemon-type type-ground">Tierra</span> <span class="pokemon-type type-flying">Volador</span> <span class="pokemon-type type-psychic">Psíquico</span> <span class="pokemon-type type-bug">Bicho</span> <span class="pokemon-type type-rock">Roca</span> <span class="pokemon-type type-ghost">Fantasma</span> <span class="pokemon-type type-dragon">Dragón</span> <span class="pokemon-type type-dark">Siniestro</span> <span class="pokemon-type type-steel">Acero</span>
                 </div>
-                <h4>Ejemplo Equipo Válido (¡Corregido!):</h4>
+                <h4>Ejemplo Equipo Válido:</h4>
                  <div class="pokemon-examples">
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/227.gif" alt="Skarmory"><span>Skarmory (Acero/Volador)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/134.gif" alt="Vaporeon"><span>Vaporeon (Agua)</span></div>
@@ -497,6 +540,17 @@
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/076.gif" alt="Golem"><span>Golem (Roca/Tierra)</span></div>
                  </div>
                  <p><em style="color: var(--color-link);">¡Este equipo SÍ es válido! Tipos usados: Acero, Volador, Agua, Bicho, Lucha, Fuego, Fantasma, Veneno, Roca, Tierra. ¡Ninguno se repite!</em></p>
+
+                <h4>Ejemplo Equipo NO Válido:</h4>
+                 <div class="pokemon-examples">
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/157.gif" alt="Typhlosion"><span>Typhlosion (Fuego)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/229.gif" alt="Houndoom"><span>Houndoom (Fuego/Siniestro)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/197.gif" alt="Umbreon"><span>Umbreon (Siniestro)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/134.gif" alt="Vaporeon"><span>Vaporeon (Agua)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/212.gif" alt="Scizor"><span>Scizor (Acero/Bicho)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/068.gif" alt="Machamp"><span>Machamp (Lucha)</span></div>
+                 </div>
+                 <p><em style="color: var(--color-warning);">¡Este equipo NO es válido! Repite el tipo Fuego (Typhlosion, Houndoom) y el tipo Siniestro (Houndoom, Umbreon). ¡Incumple la Unicidad de Tipos!</em></p>
             </div>
             <div class="clause">
                 <p><span class="clause-title">Límite Pokémon Triple Evolución Final:</span> Máximo <strong>2</strong> Pokémon en tu equipo que sean la forma final de una línea de 3 etapas.</p>
@@ -523,13 +577,15 @@
                 </div>
             </div>
             <h3>Cláusulas Estándar de Combate</h3>
-            <div class="clause"><p><span class="clause-title">Especie:</span> No repetir Pokémon (# Pokédex).</p></div>
-            <div class="clause"><p><span class="clause-title">Sueño:</span> Solo 1 rival dormido a la vez por tu acción directa.</p></div>
-            <div class="clause"><p><span class="clause-title">Congelación:</span> Solo 1 rival congelado a la vez.</p></div>
-            <div class="clause"><p><span class="clause-title">Evasión:</span> Prohibido Doble Equipo / Reducción.</p></div>
-            <div class="clause"><p><span class="clause-title">OHKO:</span> Prohibido Fisura, Perforador, Guillotina.</p></div>
-            <div class="clause"><p><span class="clause-title">Autodestrucción:</span> KO mutuo final con Explo/SelfD = Pierde quien lo usó.</p></div>
-             <div class="clause"><p><span class="clause-title">Objeto:</span> No repetir objetos equipados.</p></div>
+             <div class="standard-clauses-block">
+                <p><span class="clause-title">Especie:</span> No repetir Pokémon por número de Pokédex.</p>
+                <p><span class="clause-title">Sueño:</span> Solo puedes tener a 1 Pokémon rival dormido a la vez por tu acción directa (Somnífero, Canto, etc. Descanso no cuenta).</p>
+                <p><span class="clause-title">Congelación:</span> Solo puedes tener a 1 Pokémon rival congelado a la vez.</p>
+                <p><span class="clause-title">Evasión:</span> Prohibido usar Doble Equipo o Reducción.</p>
+                <p><span class="clause-title">OHKO:</span> Prohibido usar Fisura, Perforador o Guillotina.</p>
+                <p><span class="clause-title">Autodestrucción:</span> Si hay KO mutuo de los últimos Pokémon de ambos bandos debido a Explosión o Autodestrucción, el jugador que usó dicho movimiento pierde.</p>
+                <p><span class="clause-title">Objeto:</span> No puedes repetir objetos equipados entre los 6 Pokémon de tu equipo.</p>
+            </div>
         </section>
 
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
