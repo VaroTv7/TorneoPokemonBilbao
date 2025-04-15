@@ -256,7 +256,7 @@
         }
         .pokemon-example:hover::before { opacity: 1; }
         .pokemon-example:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 16px var(--shadow-medium); border-color: var(--color-accent); }
-        .pokemon-example .img-container { /* Added container for image */
+        .pokemon-example .img-container {
             width: 96px;
             height: 96px;
             display: flex;
@@ -265,15 +265,15 @@
             margin-bottom: 10px;
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
-            overflow: hidden; /* Hide parts outside circle */
+            overflow: hidden;
         }
         .pokemon-example img {
             display: block;
-            max-width: 100%; /* Allow shrinking */
-            max-height: 100%; /* Allow shrinking */
-            width: auto; /* Let browser determine width based on height */
-            height: auto; /* Let browser determine height based on width */
-            object-fit: contain; /* Scale while preserving aspect ratio */
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             image-rendering: pixelated;
             z-index: 1;
             transition: transform 0.3s ease;
@@ -347,6 +347,7 @@
             top: 0;
          }
 
+
         @media (max-width: 992px) {
              .pokemon-example { width: calc(16.66% - 15px); padding: 15px;}
              .pokemon-example .img-container { width: 80px; height: 80px;}
@@ -409,8 +410,7 @@
                 <ul>
                     <li><a href="#instrucciones">Guía Rápida del Torneo</a></li>
                     <li><a href="#funcionamiento-stadium2">Funcionamiento de Pokémon Stadium 2</a></li>
-                    <li><a href="#normas-base">Normas Base GSC (Generación 2)</a></li>
-                    <li><a href="#balance-rules">Reglas de Equilibrio Híbridas</a></li>
+                    <li><a href="#reglas-torneo">Reglas del Torneo (GSC + Híbridas)</a></li>
                     <li><a href="#prohibiciones-resumen">Resumen de Prohibiciones</a></li>
                     <li><a href="#controles">Controles del Juego (N64)</a></li>
                     <li><a href="#registro-equipo">Registro Obligatorio de Equipo</a></li>
@@ -436,7 +436,7 @@
             <h3>Cómo Participar (Pasos Esenciales)</h3>
             <ol>
                 <li>Lee **TODO** este reglamento con atención. ¡Es crucial!</li>
-                <li>Crea tu equipo de 6 Pokémon cumpliendo **TODAS** las reglas (Base GSC + Híbridas).</li>
+                <li>Crea tu equipo de 6 Pokémon cumpliendo **TODAS** las reglas descritas.</li>
                 <li>Verifica la legalidad de **TODOS** los movimientos en PkParaíso GSC.</li>
                 <li>Registra tu equipo definitivo en el formulario oficial. <strong>¡Puedes actualizarlo!</strong> Si cambias de idea antes de la fecha límite, simplemente envía el formulario de nuevo. Usa un nombre de equipo distinto (Ej: "Equipo Alfa v2", "Mi Equipo Final") para que sepamos cuál es la versión buena.</li>
                 <li>Una vez iniciado el torneo, usa tu equipo registrado en el modo "Batalla Libre" de Stadium 2.</li>
@@ -469,122 +469,122 @@
 
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
-        <section id="normas-base">
-            <h2>NORMAS BASE GSC (GENERACIÓN 2)</h2>
-            <p>Fundamentos técnicos que rigen el torneo:</p>
-            <div class="clause">
-                <p><span class="clause-title">Pokémon Permitidos:</span> #001 Bulbasaur a #251 Celebi (excepto los explícitamente prohibidos).</p>
-            </div>
-            <div class="clause">
-                <p><span class="clause-title">Movimientos Permitidos:</span> Solo los legales en GSC (Nivel, MT/MO, Tutor, Crianza, Evento GSC). ¡Verifica en <a href="https://www.pkparaiso.com/pokedex-gsc.php" target="_blank" rel="noopener noreferrer">PkParaíso GSC</a>!</p>
-            </div>
-            <div class="clause">
-                <p><span class="clause-title">Mecánicas Clave GSC:</span></p>
-                <ul>
-                    <li><strong style="color: var(--color-warning);">NO</strong> Habilidades (Abilities).</li>
-                    <li><strong style="color: var(--color-warning);">NO</strong> Naturalezas (Natures).</li>
-                    <li>**SÍ** IVs/DVs y EVs/Stat Exp (con sus valores estándar).</li>
-                    <li>**SÍ** Objetos GSC (Restos, Bayas...). Cláusula de Objeto: No repetir objetos.</li>
-                    <li>División Físico/Especial **POR TIPO** (Fuego=Especial, Normal=Físico, etc.).</li>
-                </ul>
-            </div>
-            <div class="clause">
-                <p><span class="clause-title">Modo de Juego:</span> Batalla Libre, Nivel 50 (Stadium 2).</p>
-            </div>
-            <div class="warning">
-                <p><strong>¡Tolerancia Cero!</strong> Usar Pokémon, movimientos u objetos ilegales en GSC resultará en descalificación inmediata.</p>
-            </div>
-        </section>
+        <section id="reglas-torneo">
+             <h2>Reglas del Torneo (GSC + Híbridas)</h2>
 
-         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
-
-        <section id="balance-rules">
-            <h2>REGLAS DE EQUILIBRIO HÍBRIDAS</h2>
-            <p>Restricciones personalizadas para un meta más variado y justo:</p>
-            <h3>Pokémon No Permitidos (Banlist Unificada)</h3>
+             <h3>Normas Fundamentales (GSC - Generación 2)</h3>
+             <p>Fundamentos técnicos que rigen el torneo, basados en Pokémon Oro, Plata y Cristal:</p>
              <div class="clause">
-                 <p>Los siguientes Pokémon <strong style="color: var(--color-warning);">NO PUEDEN</strong> ser usados en este torneo:</p>
-                 <div class="pokemon-examples">
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/mewtwo.gif" alt="Sprite de Mewtwo"></div><span>Mewtwo<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/mew.gif" alt="Sprite de Mew"></div><span>Mew<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/lugia.gif" alt="Sprite de Lugia"></div><span>Lugia<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/ho-oh.gif" alt="Sprite de Ho-Oh"></div><span>Ho-Oh<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/celebi.gif" alt="Sprite de Celebi"></div><span>Celebi<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/articuno.gif" alt="Sprite de Articuno"></div><span>Articuno<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/zapdos.gif" alt="Sprite de Zapdos"></div><span>Zapdos<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/moltres.gif" alt="Sprite de Moltres"></div><span>Moltres<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/raikou.gif" alt="Sprite de Raikou"></div><span>Raikou<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/entei.gif" alt="Sprite de Entei"></div><span>Entei<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/suicune.gif" alt="Sprite de Suicune"></div><span>Suicune<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/snorlax.gif" alt="Sprite de Snorlax"></div><span>Snorlax<br>(Prohibido)</span></div>
-                 </div>
-            </div>
-
-            <h3>Restricciones de Construcción de Equipo</h3>
-            <div class="clause">
-                <p><span class="clause-title">Cláusula de Unicidad de Tipos (¡REGLA CLAVE!):</span> <strong style="color: var(--color-warning);">NO</strong> puedes repetir <strong style="color: var(--color-warning);">NINGÚN</strong> tipo elemental entre los 6 Pokémon de tu equipo. Si un Pokémon es Doble Tipo, ambos tipos cuentan.</p>
-                <p><em>Ejemplo:</em> Llevas a Skarmory (Acero/Volador). Ya no puedes usar otro Acero ni otro Volador.</p>
-                <p>Tipos GSC:</p>
-                <div>
-                    <span class="pokemon-type type-normal">Normal</span> <span class="pokemon-type type-fire">Fuego</span> <span class="pokemon-type type-water">Agua</span> <span class="pokemon-type type-grass">Planta</span> <span class="pokemon-type type-electric">Eléctrico</span> <span class="pokemon-type type-ice">Hielo</span> <span class="pokemon-type type-fighting">Lucha</span> <span class="pokemon-type type-poison">Veneno</span> <span class="pokemon-type type-ground">Tierra</span> <span class="pokemon-type type-flying">Volador</span> <span class="pokemon-type type-psychic">Psíquico</span> <span class="pokemon-type type-bug">Bicho</span> <span class="pokemon-type type-rock">Roca</span> <span class="pokemon-type type-ghost">Fantasma</span> <span class="pokemon-type type-dragon">Dragón</span> <span class="pokemon-type type-dark">Siniestro</span> <span class="pokemon-type type-steel">Acero</span>
-                </div>
-                <h4>Ejemplo Equipo Válido:</h4>
-                 <div class="pokemon-examples">
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/skarmory.gif" alt="Sprite de Skarmory"></div><span>Skarmory (Acero/Volador)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/vaporeon.gif" alt="Sprite de Vaporeon"></div><span>Vaporeon (Agua)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/heracross.gif" alt="Sprite de Heracross"></div><span>Heracross (Bicho/Lucha)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/flareon.gif" alt="Sprite de Flareon"></div><span>Flareon (Fuego)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/gengar.gif" alt="Sprite de Gengar"></div><span>Gengar (Fantasma/Veneno)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/golem.gif" alt="Sprite de Golem"></div><span>Golem (Roca/Tierra)</span></div>
-                 </div>
-                 <p><em style="color: var(--color-link);">¡Este equipo SÍ es válido! Tipos usados: Acero, Volador, Agua, Bicho, Lucha, Fuego, Fantasma, Veneno, Roca, Tierra. ¡Ninguno se repite!</em></p>
-
-                <h4>Ejemplo Equipo NO Válido:</h4>
-                 <div class="pokemon-examples">
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/typhlosion.gif" alt="Sprite de Typhlosion"></div><span>Typhlosion (Fuego)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/houndoom.gif" alt="Sprite de Houndoom"></div><span>Houndoom (Fuego/Siniestro)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/umbreon.gif" alt="Sprite de Umbreon"></div><span>Umbreon (Siniestro)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/vaporeon.gif" alt="Sprite de Vaporeon"></div><span>Vaporeon (Agua)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/scizor.gif" alt="Sprite de Scizor"></div><span>Scizor (Acero/Bicho)</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/machamp.gif" alt="Sprite de Machamp"></div><span>Machamp (Lucha)</span></div>
-                 </div>
-                 <p><em style="color: var(--color-warning);">¡Este equipo NO es válido! Repite el tipo Fuego (Typhlosion, Houndoom) y el tipo Siniestro (Houndoom, Umbreon). ¡Incumple la Unicidad de Tipos!</em></p>
-            </div>
-            <div class="clause">
-                <p><span class="clause-title">Límite Pokémon Triple Evolución Final:</span> Máximo <strong>2</strong> Pokémon en tu equipo que sean la forma final de una línea de 3 etapas.</p>
-                 <h3>Ejemplos afectados (Máx. 2 de estos o similares):</h3>
-                <div class="pokemon-examples">
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/meganium.gif" alt="Sprite de Meganium"></div><span>Meganium</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/charizard.gif" alt="Sprite de Charizard"></div><span>Charizard</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/dragonite.gif" alt="Sprite de Dragonite"></div><span>Dragonite</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/ampharos.gif" alt="Sprite de Ampharos"></div><span>Ampharos</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/golem.gif" alt="Sprite de Golem"></div><span>Golem</span></div>
-                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/alakazam.gif" alt="Sprite de Alakazam"></div><span>Alakazam</span></div>
-                </div>
-            </div>
+                 <p><span class="clause-title">Pokémon Permitidos:</span> #001 Bulbasaur a #251 Celebi (excepto los explícitamente prohibidos más abajo).</p>
+             </div>
              <div class="clause">
-                <p><span class="clause-title">Límite Pokémon Iniciales:</span> Máximo <strong>1</strong> Pokémon perteneciente a una línea evolutiva inicial de Kanto O Johto.</p>
-                <h3>Ejemplos (Solo 1 línea evolutiva por equipo):</h3>
-                <div class="pokemon-examples">
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/venusaur.gif" alt="Sprite de Venusaur"></div><span>Línea Venusaur</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/charizard.gif" alt="Sprite de Charizard"></div><span>Línea Charizard</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/blastoise.gif" alt="Sprite de Blastoise"></div><span>Línea Blastoise</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/meganium.gif" alt="Sprite de Meganium"></div><span>Línea Meganium</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/typhlosion.gif" alt="Sprite de Typhlosion"></div><span>Línea Typhlosion</span></div>
-                    <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/feraligatr.gif" alt="Sprite de Feraligatr"></div><span>Línea Feraligatr</span></div>
-                </div>
-            </div>
-            <h3>Cláusulas Estándar de Combate</h3>
-             <div class="standard-clauses-block">
-                <p><span class="clause-title">Especie:</span> No repetir Pokémon por número de Pokédex.</p>
-                <p><span class="clause-title">Sueño:</span> Solo puedes tener a 1 Pokémon rival dormido a la vez por tu acción directa (Somnífero, Canto, etc. Descanso no cuenta).</p>
-                <p><span class="clause-title">Congelación:</span> Solo puedes tener a 1 Pokémon rival congelado a la vez.</p>
-                <p><span class="clause-title">Evasión:</span> Prohibido usar Doble Equipo o Reducción.</p>
-                <p><span class="clause-title">OHKO:</span> Prohibido usar Fisura, Perforador o Guillotina.</p>
-                <p><span class="clause-title">Autodestrucción:</span> Si hay KO mutuo de los últimos Pokémon de ambos bandos debido a Explosión o Autodestrucción, el jugador que usó dicho movimiento pierde.</p>
-                <p><span class="clause-title">Objeto:</span> No puedes repetir objetos equipados entre los 6 Pokémon de tu equipo.</p>
-            </div>
-        </section>
+                 <p><span class="clause-title">Movimientos Permitidos:</span> Solo los legales en GSC (Nivel, MT/MO, Tutor, Crianza, Evento GSC). ¡Verifica en <a href="https://www.pkparaiso.com/pokedex-gsc.php" target="_blank" rel="noopener noreferrer">PkParaíso GSC</a>!</p>
+             </div>
+             <div class="clause">
+                 <p><span class="clause-title">Mecánicas Clave GSC:</span></p>
+                 <ul>
+                     <li><strong style="color: var(--color-warning);">NO</strong> Habilidades (Abilities).</li>
+                     <li><strong style="color: var(--color-warning);">NO</strong> Naturalezas (Natures).</li>
+                     <li>**SÍ** IVs/DVs y EVs/Stat Exp (con sus valores estándar).</li>
+                     <li>**SÍ** Objetos GSC (Restos, Bayas...). Cláusula de Objeto: No repetir objetos.</li>
+                     <li>División Físico/Especial **POR TIPO** (Fuego=Especial, Normal=Físico, etc.).</li>
+                 </ul>
+             </div>
+             <div class="clause">
+                 <p><span class="clause-title">Modo de Juego:</span> Batalla Libre, Nivel 50 (Stadium 2).</p>
+             </div>
+              <div class="warning">
+                 <p><strong>¡Tolerancia Cero!</strong> Usar Pokémon, movimientos u objetos ilegales en GSC resultará en descalificación inmediata.</p>
+             </div>
+
+             <div class="pokeball-divider" style="margin: 25px 0;"></div>
+
+             <h3>Restricciones Específicas (Híbridas)</h3>
+             <p>Reglas personalizadas añadidas para un meta más variado y justo:</p>
+             <h4>Pokémon No Permitidos (Banlist Unificada)</h4>
+              <div class="clause">
+                  <p>Los siguientes Pokémon <strong style="color: var(--color-warning);">NO PUEDEN</strong> ser usados en este torneo:</p>
+                  <div class="pokemon-examples">
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/mewtwo.gif" alt="Sprite de Mewtwo"></div><span>Mewtwo<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/mew.gif" alt="Sprite de Mew"></div><span>Mew<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/lugia.gif" alt="Sprite de Lugia"></div><span>Lugia<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/ho-oh.gif" alt="Sprite de Ho-Oh"></div><span>Ho-Oh<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/celebi.gif" alt="Sprite de Celebi"></div><span>Celebi<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/articuno.gif" alt="Sprite de Articuno"></div><span>Articuno<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/zapdos.gif" alt="Sprite de Zapdos"></div><span>Zapdos<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/moltres.gif" alt="Sprite de Moltres"></div><span>Moltres<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/raikou.gif" alt="Sprite de Raikou"></div><span>Raikou<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/entei.gif" alt="Sprite de Entei"></div><span>Entei<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/suicune.gif" alt="Sprite de Suicune"></div><span>Suicune<br>(Prohibido)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/snorlax.gif" alt="Sprite de Snorlax"></div><span>Snorlax<br>(Prohibido)</span></div>
+                  </div>
+             </div>
+
+             <h4>Restricciones de Construcción de Equipo</h4>
+             <div class="clause">
+                 <p><span class="clause-title">Cláusula de Unicidad de Tipos (¡REGLA CLAVE!):</span> <strong style="color: var(--color-warning);">NO</strong> puedes repetir <strong style="color: var(--color-warning);">NINGÚN</strong> tipo elemental entre los 6 Pokémon de tu equipo. Si un Pokémon es Doble Tipo, ambos tipos cuentan.</p>
+                 <p><em>Ejemplo:</em> Llevas a Skarmory (Acero/Volador). Ya no puedes usar otro Acero ni otro Volador.</p>
+                 <p>Tipos GSC:</p>
+                 <div>
+                     <span class="pokemon-type type-normal">Normal</span> <span class="pokemon-type type-fire">Fuego</span> <span class="pokemon-type type-water">Agua</span> <span class="pokemon-type type-grass">Planta</span> <span class="pokemon-type type-electric">Eléctrico</span> <span class="pokemon-type type-ice">Hielo</span> <span class="pokemon-type type-fighting">Lucha</span> <span class="pokemon-type type-poison">Veneno</span> <span class="pokemon-type type-ground">Tierra</span> <span class="pokemon-type type-flying">Volador</span> <span class="pokemon-type type-psychic">Psíquico</span> <span class="pokemon-type type-bug">Bicho</span> <span class="pokemon-type type-rock">Roca</span> <span class="pokemon-type type-ghost">Fantasma</span> <span class="pokemon-type type-dragon">Dragón</span> <span class="pokemon-type type-dark">Siniestro</span> <span class="pokemon-type type-steel">Acero</span>
+                 </div>
+                 <h5>Ejemplo Equipo Válido:</h5>
+                  <div class="pokemon-examples">
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/skarmory.gif" alt="Sprite de Skarmory"></div><span>Skarmory (Acero/Volador)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/vaporeon.gif" alt="Sprite de Vaporeon"></div><span>Vaporeon (Agua)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/heracross.gif" alt="Sprite de Heracross"></div><span>Heracross (Bicho/Lucha)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/flareon.gif" alt="Sprite de Flareon"></div><span>Flareon (Fuego)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/gengar.gif" alt="Sprite de Gengar"></div><span>Gengar (Fantasma/Veneno)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/golem.gif" alt="Sprite de Golem"></div><span>Golem (Roca/Tierra)</span></div>
+                  </div>
+                  <p><em style="color: var(--color-link);">¡Este equipo SÍ es válido! Tipos usados: Acero, Volador, Agua, Bicho, Lucha, Fuego, Fantasma, Veneno, Roca, Tierra. ¡Ninguno se repite!</em></p>
+
+                 <h5>Ejemplo Equipo NO Válido:</h5>
+                  <div class="pokemon-examples">
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/typhlosion.gif" alt="Sprite de Typhlosion"></div><span>Typhlosion (Fuego)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/houndoom.gif" alt="Sprite de Houndoom"></div><span>Houndoom (Fuego/Siniestro)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/umbreon.gif" alt="Sprite de Umbreon"></div><span>Umbreon (Siniestro)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/vaporeon.gif" alt="Sprite de Vaporeon"></div><span>Vaporeon (Agua)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/scizor.gif" alt="Sprite de Scizor"></div><span>Scizor (Acero/Bicho)</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/machamp.gif" alt="Sprite de Machamp"></div><span>Machamp (Lucha)</span></div>
+                  </div>
+                  <p><em style="color: var(--color-warning);">¡Este equipo NO es válido! Repite el tipo Fuego (Typhlosion, Houndoom) y el tipo Siniestro (Houndoom, Umbreon). ¡Incumple la Unicidad de Tipos!</em></p>
+             </div>
+             <div class="clause">
+                 <p><span class="clause-title">Límite Pokémon Triple Evolución Final:</span> Máximo <strong>2</strong> Pokémon en tu equipo que sean la forma final de una línea de 3 etapas.</p>
+                  <h5>Ejemplos afectados (Máx. 2 de estos o similares):</h5>
+                 <div class="pokemon-examples">
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/meganium.gif" alt="Sprite de Meganium"></div><span>Meganium</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/charizard.gif" alt="Sprite de Charizard"></div><span>Charizard</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/dragonite.gif" alt="Sprite de Dragonite"></div><span>Dragonite</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/ampharos.gif" alt="Sprite de Ampharos"></div><span>Ampharos</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/golem.gif" alt="Sprite de Golem"></div><span>Golem</span></div>
+                      <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/alakazam.gif" alt="Sprite de Alakazam"></div><span>Alakazam</span></div>
+                 </div>
+             </div>
+              <div class="clause">
+                 <p><span class="clause-title">Límite Pokémon Iniciales:</span> Máximo <strong>1</strong> Pokémon perteneciente a una línea evolutiva inicial de Kanto O Johto.</p>
+                 <h5>Ejemplos (Solo 1 línea evolutiva por equipo):</h5>
+                 <div class="pokemon-examples">
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/venusaur.gif" alt="Sprite de Venusaur"></div><span>Línea Venusaur</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/charizard.gif" alt="Sprite de Charizard"></div><span>Línea Charizard</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/blastoise.gif" alt="Sprite de Blastoise"></div><span>Línea Blastoise</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/meganium.gif" alt="Sprite de Meganium"></div><span>Línea Meganium</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/typhlosion.gif" alt="Sprite de Typhlosion"></div><span>Línea Typhlosion</span></div>
+                     <div class="pokemon-example"><div class="img-container"><img src="https://projectpokemon.org/images/normal-sprite/feraligatr.gif" alt="Sprite de Feraligatr"></div><span>Línea Feraligatr</span></div>
+                 </div>
+             </div>
+             <h4>Cláusulas Estándar de Combate</h4>
+              <div class="standard-clauses-block">
+                 <p><span class="clause-title">Especie:</span> No repetir Pokémon por número de Pokédex.</p>
+                 <p><span class="clause-title">Sueño:</span> Solo puedes tener a 1 Pokémon rival dormido a la vez por tu acción directa (Somnífero, Canto, etc. Descanso no cuenta).</p>
+                 <p><span class="clause-title">Congelación:</span> Solo puedes tener a 1 Pokémon rival congelado a la vez.</p>
+                 <p><span class="clause-title">Evasión:</span> Prohibido usar Doble Equipo o Reducción.</p>
+                 <p><span class="clause-title">OHKO:</span> Prohibido usar Fisura, Perforador o Guillotina.</p>
+                 <p><span class="clause-title">Autodestrucción:</span> Si hay KO mutuo de los últimos Pokémon de ambos bandos debido a Explosión o Autodestrucción, el jugador que usó dicho movimiento pierde.</p>
+                 <p><span class="clause-title">Objeto:</span> No puedes repetir objetos equipados entre los 6 Pokémon de tu equipo.</p>
+             </div>
+         </section>
 
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
