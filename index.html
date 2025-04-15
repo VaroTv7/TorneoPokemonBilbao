@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneo Pokémon Stadium 2 - Reglas Híbridas GSC</title>
+    <title>Torneo Pokémon Stadium 2 - Reglas Híbridas GSC ¡Definitivo!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -112,16 +112,32 @@
             text-decoration: none;
             color: var(--color-primary);
         }
-        ul, ol { margin-left: 25px; margin-bottom: 20px; }
-        li { margin-bottom: 10px; padding-left: 10px; position: relative;}
+        ul, ol { margin-left: 0; margin-bottom: 20px; padding-left: 0; list-style-type: none;}
+        li { margin-bottom: 10px; padding-left: 30px; position: relative;}
         li::before {
             content: '◈';
             color: var(--color-accent);
             position: absolute;
-            left: -15px;
+            left: 5px;
             font-size: 0.8em;
             top: 2px;
+            line-height: 1.6;
         }
+        ol li::before {
+            content: counter(list-item) "."; /* Add this if you want numbers back on OL */
+            counter-increment: list-item;
+            color: var(--color-accent);
+            position: absolute;
+            left: 5px;
+            font-size: 0.9em;
+            top: 0;
+            font-weight: bold;
+            line-height: 1.6;
+             padding-right: 8px; /* Space between number and text */
+        }
+        ol { counter-reset: list-item; } /* Needed for OL counter */
+
+
         .warning {
             background-color: rgba(255, 51, 102, 0.2);
             border-left: 5px solid var(--color-warning);
@@ -220,7 +236,7 @@
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: var(--border-radius);
             padding: 18px;
-            width: 130px;
+            width: 130px; /* Ajusta según necesidad para 6 por fila */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid var(--color-border);
             box-shadow: 3px 3px 6px var(--shadow-light);
@@ -244,7 +260,7 @@
             transition: transform 0.3s ease;
         }
         .pokemon-example:hover img { transform: scale(1.1); }
-        .pokemon-example span { font-size: 0.9rem; text-align: center; font-weight: bold; z-index: 1; }
+        .pokemon-example span { font-size: 0.85rem; text-align: center; font-weight: bold; z-index: 1; line-height: 1.2; }
         .pokeball-divider { display: flex; align-items: center; margin: 40px 0; }
         .pokeball-divider::before, .pokeball-divider::after { content: ""; flex: 1; height: 3px; background: linear-gradient(90deg, transparent, var(--color-border), transparent); }
         .pokeball-icon {
@@ -256,8 +272,8 @@
         .controller-layout { display: flex; justify-content: center; margin: 25px 0; background-color: rgba(0, 0, 0, 0.25); padding: 20px; border-radius: var(--border-radius); border: 1px solid var(--color-border); }
         .controller-img { max-width: 100%; height: auto; border-radius: var(--border-radius); box-shadow: 0 4px 8px var(--shadow-light); }
         .battle-phases { background-color: rgba(0, 0, 0, 0.25); border-radius: var(--border-radius); padding: 20px; margin: 20px 0; border: 1px solid var(--color-border); }
-        .phase { padding: 12px; margin-bottom: 12px; border-left: 4px solid var(--color-accent); background-color: rgba(255, 204, 0, 0.08); transition: background-color 0.3s ease; }
-        .phase:hover { background-color: rgba(255, 204, 0, 0.15); }
+        .phase { padding: 12px; margin-bottom: 12px; border-left: 4px solid var(--color-accent); background-color: rgba(255, 204, 0, 0.08); transition: background-color 0.3s ease, transform 0.2s ease; }
+        .phase:hover { background-color: rgba(255, 204, 0, 0.15); transform: translateX(5px); }
         .phase:last-child { margin-bottom: 0; }
         .phase-title { font-weight: bold; color: var(--color-accent); display: block; margin-bottom: 8px; font-size: 1.1em; }
         .prohibitions-table { width: 100%; border-collapse: collapse; margin: 25px 0; box-shadow: 0 4px 8px var(--shadow-light); overflow: hidden; border-radius: var(--border-radius);}
@@ -265,26 +281,23 @@
         .prohibitions-table th { background-color: rgba(0, 0, 0, 0.4); color: var(--color-accent); font-family: 'Press Start 2P', cursive; font-size: 0.8rem; text-transform: uppercase; }
         .prohibitions-table tr:last-child td { border-bottom: none; }
         .prohibitions-table tr:hover { background-color: rgba(255, 255, 255, 0.08); }
-        .prohibitions-table td ul { margin-left: 0; padding-left: 18px; margin-bottom: 0; }
-        .prohibitions-table td li::before { content: '»'; left: -12px; top: 0;}
-        .btn-n, .btn-x {
+        .prohibitions-table td ul { margin-left: 0; padding-left: 0; margin-bottom: 0; list-style-type: none;} /* Apply list-style-type here too */
+        .prohibitions-table td li::before { content: '»'; left: 5px; top: 0; color: var(--color-link);} /* Adjusted position */
+        .prohibitions-table td li { padding-left: 25px; margin-bottom: 5px;} /* Adjusted padding */
+
+        .btn-n {
             font-family: 'Arial', sans-serif; font-weight: bold; padding: 3px 8px; border-radius: 50%; margin: 0 3px; display: inline-block; line-height: 1; text-align: center; color: white; border: 1px solid rgba(0,0,0,0.5); box-shadow: 1px 1px 2px rgba(0,0,0,0.3); min-width: 20px;
         }
-        .btn-n.a { background-color: #2ecc71; } /* Green A */
-        .btn-n.b { background-color: #e74c3c; } /* Red B */
-        .btn-n.start { background-color: #7f8c8d; padding: 3px 10px; border-radius: 10px; } /* Grey Start */
-        .btn-n.z { background-color: #3498db; } /* Blue Z */
-        .btn-n.c { background-color: #f1c40f; } /* Yellow C */
-
-        .btn-x.a { background-color: #107C10; } /* Xbox Green A */
-        .btn-x.b { background-color: #E51837; } /* Xbox Red B */
-        .btn-x.x { background-color: #0060A8; } /* Xbox Blue X */
-        .btn-x.y { background-color: #F4C80C; } /* Xbox Yellow Y */
-        .btn-x.start { background-color: #666; padding: 3px 10px; border-radius: 5px; } /* Grey Start/Menu */
-        .btn-x.z { background-color: #888; } /* Generic Trigger Grey */
-        .btn-x.c { background-color: #888; } /* Map C to something generic */
-
+        .btn-n.a { background-color: #27ae60; } /* Slightly different Green A */
+        .btn-n.b { background-color: #c0392b; } /* Slightly different Red B */
+        .btn-n.start { background-color: #7f8c8d; padding: 3px 10px; border-radius: 10px; }
+        .btn-n.z { background-color: #2980b9; } /* Slightly different Blue Z */
+        .btn-n.c { background-color: #f39c12; } /* Slightly different Yellow C */
         .dpad-icon { font-size: 1.3em; line-height: 1; margin: 0 3px; display: inline-block; color: #bdc3c7; text-shadow: 1px 1px 1px #2c3e50;}
+
+        @media (max-width: 992px) { /* Adjust breakpoint for 6 items */
+             .pokemon-example { width: 140px; } /* Allow more space if needed */
+        }
 
         @media (max-width: 768px) {
             h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; }
@@ -292,34 +305,40 @@
             section { padding: 20px; margin: 25px 0; }
             .button { width: 100%; padding: 16px; font-size: 1rem; }
             #header-banner-img { height: auto; border-width: 3px; }
-            .pokemon-examples { gap: 12px; }
-             .pokemon-example { width: 110px; padding: 12px; }
-             .pokemon-example img { width: 65px; height: 65px; }
+            .pokemon-examples { gap: 15px; } /* Adjust gap for smaller screens */
+             .pokemon-example { width: calc(33% - 15px); } /* 3 per row */
+             .pokemon-example img { width: 60px; height: 60px; }
             .prohibitions-table th, .prohibitions-table td { padding: 10px 12px; font-size: 0.9rem;}
             .prohibitions-table th { font-size: 0.7rem; }
              .pokeball-icon { width: 35px; height: 35px; margin: 0 15px; border-width: 2px;}
              .pokeball-icon::before { border-bottom-width: 2px;}
              .pokeball-icon::after { width: 8px; height: 8px; border-width: 2px;}
         }
+        @media (max-width: 576px) {
+             .pokemon-example { width: calc(50% - 10px); } /* 2 per row */
+             .pokemon-example img { width: 55px; height: 55px; }
+             li { padding-left: 25px; } li::before { left: 0px;} /* Adjust list icon position for mobile */
+              ol li::before { left: 0px;}
+        }
         @media (max-width: 480px) {
             h1 { font-size: 1.2rem; } h2 { font-size: 1.1rem; }
             #descripcion-torneo { font-size: 1rem; }
             .contact-methods { flex-direction: column; gap: 15px;}
             .pokeball-icon { width: 30px; height: 30px; }
-            .pokemon-example { width: 100px; padding: 10px;}
-            .pokemon-example img { width: 55px; height: 55px; }
             .controller-layout { padding: 15px; }
             .prohibitions-table th, .prohibitions-table td { font-size: 0.85rem;}
-            li { padding-left: 5px;} li::before { left: -12px;}
             body { line-height: 1.5; }
+             .pokemon-example { width: calc(50% - 10px); } /* Keep 2 per row */
+             .pokemon-example img { width: 50px; height: 50px; }
         }
         .table-of-contents { background-color: rgba(0, 0, 0, 0.25); border-radius: var(--border-radius); padding: 25px; margin: 25px 0; border: 1px solid var(--color-border);}
         .table-of-contents h3 { margin-top: 0; margin-bottom: 20px; color: var(--color-accent); font-family: 'Press Start 2P', cursive; font-size: 1.2rem; text-align: center; }
         .table-of-contents ul { list-style-type: none; margin-left: 0; padding-left: 0; }
         .table-of-contents li { margin-bottom: 12px; }
-        .table-of-contents li::before { content: '►'; font-size: 0.7em; top: 5px; }
+        .table-of-contents li::before { content: '►'; font-size: 0.7em; top: 5px; color: var(--color-link);} /* Use different icon/color for TOC */
         .table-of-contents a { display: block; padding: 10px 18px; border-radius: 6px; transition: all 0.25s ease-in-out; font-weight: bold; background-color: rgba(255,255,255, 0.05); border: 1px solid transparent;}
-        .table-of-contents a:hover { background-color: rgba(255, 255, 255, 0.15); transform: translateX(8px) scale(1.02); color: var(--color-accent); text-decoration: none; border-color: var(--color-accent); box-shadow: 3px 3px 5px var(--shadow-light);}
+        .table-of-contents a:hover { background-color: rgba(77, 166, 255, 0.2); transform: translateX(8px) scale(1.02); color: var(--color-link); text-decoration: none; border-color: var(--color-link); box-shadow: 3px 3px 5px var(--shadow-light);}
+
     </style>
 </head>
 <body>
@@ -327,7 +346,7 @@
         <div class="container">
             <img id="header-banner-img" src="https://via.placeholder.com/800x250/16213e/ffcc00?text=Banner+Torneo+PLACEHOLDER" alt="Banner del Torneo Pokémon Stadium 2">
             <h1>TORNEO POKÉMON STADIUM 2</h1>
-            <p id="descripcion-torneo">Competición Retro con Reglas Híbridas GSC - ¡Nostalgia y Sorpresa Garantizadas!</p>
+            <p id="descripcion-torneo">Reglas Híbridas GSC: ¡Nostalgia, Estrategia y Sorpresa Aleatoria!</p>
         </div>
     </header>
 
@@ -336,20 +355,20 @@
             <div class="table-of-contents">
                  <h3>ÍNDICE DE CONTENIDOS</h3>
                 <ul>
-                    <li><a href="#instrucciones">➤ Guía del Torneo</a></li>
-                    <li><a href="#funcionamiento-stadium2">➤ Funcionamiento y Stats Aleatorias</a></li>
-                    <li><a href="#normas-base">➤ Normas Base GSC</a></li>
-                    <li><a href="#balance-rules">➤ Reglas de Equilibrio Híbridas</a></li>
-                    <li><a href="#prohibiciones-resumen">➤ Resumen de Prohibiciones</a></li>
-                    <li><a href="#controles">➤ Controles del Juego</a></li>
-                    <li><a href="#registro-equipo">➤ Registro de Equipo</a></li>
-                    <li><a href="#contacto">➤ Contacto</a></li>
+                    <li><a href="#instrucciones">Guía Rápida del Torneo</a></li>
+                    <li><a href="#funcionamiento-stadium2">Funcionamiento y ¡Stats Aleatorias!</a></li>
+                    <li><a href="#normas-base">Normas Base GSC (Generación 2)</a></li>
+                    <li><a href="#balance-rules">Reglas de Equilibrio Híbridas</a></li>
+                    <li><a href="#prohibiciones-resumen">Resumen de Prohibiciones</a></li>
+                    <li><a href="#controles">Controles del Juego (N64)</a></li>
+                    <li><a href="#registro-equipo">Registro Obligatorio de Equipo</a></li>
+                    <li><a href="#contacto">Contacto Organización</a></li>
                 </ul>
             </div>
         </section>
 
         <section id="instrucciones" class="clearfix">
-            <h2>GUÍA DEL TORNEO</h2>
+            <h2>GUÍA RÁPIDA DEL TORNEO</h2>
             <img id="stadium-game-img" class="image-right" src="https://via.placeholder.com/300x200/16213e/ffffff?text=Gameplay+PLACEHOLDER" alt="Imagen de Pokémon Stadium 2">
             <p>¡Bienvenido/a al Torneo Pokémon Stadium 2 con Reglas Híbridas GSC! Prepárate para revivir la emoción de la Segunda Generación con un toque único de aleatoriedad y equilibrio.</p>
             <h3>Información Clave</h3>
@@ -363,12 +382,12 @@
              <div class="tip">
                  <p><strong>Testea por tu cuenta:</strong> Puedes descargar un emulador de N64 (Project64, Mupen64Plus, etc.) para tu plataforma (Windows, Mac, Linux, Android) y la ROM de Stadium 2 para familiarizarte. <strong>Posiblemente</strong>, los organizadores puedan facilitar archivos de equipo con tus stats aleatorias asignadas para que puedas probarlos antes del torneo, ¡pero esto aún está por confirmar!</p>
              </div>
-            <h3>Cómo Participar</h3>
+            <h3>Cómo Participar (Pasos Esenciales)</h3>
             <ol>
-                <li>Lee **TODO** este reglamento con atención.</li>
+                <li>Lee **TODO** este reglamento con atención. ¡Es crucial!</li>
                 <li>Crea tu equipo de 6 Pokémon cumpliendo **TODAS** las reglas (Base GSC + Híbridas).</li>
                 <li>Verifica la legalidad de **TODOS** los movimientos en PkParaíso GSC.</li>
-                <li>Registra tu equipo definitivo en el formulario oficial. <strong>¡Puedes actualizarlo!</strong> Si cambias de idea antes de la fecha límite, simplemente envía el formulario de nuevo. Puedes añadir "v2", "Equipo Final", etc., al nombre del equipo para que sepamos cuál es el bueno.</li>
+                <li>Registra tu equipo definitivo en el formulario oficial. <strong>¡Puedes actualizarlo!</strong> Si cambias de idea antes de la fecha límite, simplemente envía el formulario de nuevo. Usa un nombre de equipo distinto (Ej: "Equipo Alfa v2", "Mi Equipo Final") para que sepamos cuál es la versión buena.</li>
                 <li>Una vez iniciado el torneo, usa tu equipo registrado (con las stats aleatorias que te asignaremos) en el modo "Batalla Libre" de Stadium 2.</li>
             </ol>
         </section>
@@ -376,13 +395,13 @@
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
         <section id="funcionamiento-stadium2">
-            <h2>FUNCIONAMIENTO Y STATS ALEATORIAS</h2>
+            <h2>FUNCIONAMIENTO Y ¡STATS ALEATORIAS!</h2>
             <div class="tip">
                 <p><strong>¡Atención: Stats con Potencial Aleatorio!</strong></p>
                 <p>La gran particularidad de este torneo es que el **potencial base individual (IVs/DVs)** de cada estadística (PS, Ataque, Defensa, At. Especial, Def. Especial, Velocidad) **será generado aleatoriamente** para cada uno de los 6 Pokémon de tu equipo. Esto implica:</p>
                  <ul>
                     <li><strong>Unicidad Total:</strong> No habrá dos Pokémon iguales, ¡ni siquiera de la misma especie! Tu Charizard podría ser más rápido que el de tu rival, pero quizás menos resistente.</li>
-                    <li><strong>Adiós al Min-Maxing Extremo:</strong> Olvídate de buscar la perfección absoluta (31 IVs en todo). El objetivo es divertirse, adaptarse y crear estrategias con la "mano" que te toque. ¡La habilidad primará sobre la perfección genética!</li>
+                    <li><strong>Adiós al Min-Maxing Extremo:</strong> Olvídate de buscar la perfección absoluta (IVs perfectos). El objetivo es divertirse, adaptarse y crear estrategias con la "mano" que te toque. ¡La habilidad primará sobre la perfección genética!</li>
                     <li><strong>Transparencia:</strong> Los organizadores **generarán y te comunicarán los valores de IVs/DVs aleatorios** para tus 6 Pokémon antes del torneo. Deberás configurarlos así en el emulador.</li>
                     <li><strong>EVs/Stat Exp:</strong> Los Puntos de Esfuerzo (Stat Exp en GSC) **SÍ los controlas tú** como siempre, ¡ahí puedes especializar a tus Pokémon!</li>
                  </ul>
@@ -410,22 +429,13 @@
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
         <section id="normas-base">
-            <h2>NORMAS BASE GSC</h2>
-            <p>Fundamentos técnicos de la 2ª Generación:</p>
+            <h2>NORMAS BASE GSC (GENERACIÓN 2)</h2>
+            <p>Fundamentos técnicos que rigen el torneo:</p>
             <div class="clause">
-                <p><span class="clause-title">Pokémon Permitidos:</span> #001 Bulbasaur a #251 Celebi (excepto prohibidos específicos).</p>
-                <h3>Ejemplos (Sujetos a Reglas Híbridas):</h3>
-                <div class="pokemon-examples">
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/157.gif" alt="Typhlosion"><span>Typhlosion</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/248.gif" alt="Tyranitar"><span>Tyranitar</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/212.gif" alt="Scizor"><span>Scizor</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/196.gif" alt="Espeon"><span>Espeon</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/208.gif" alt="Steelix"><span>Steelix</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/062.gif" alt="Poliwrath"><span>Poliwrath</span></div>
-                </div>
+                <p><span class="clause-title">Pokémon Permitidos:</span> #001 Bulbasaur a #251 Celebi (excepto los explícitamente prohibidos).</p>
             </div>
             <div class="clause">
-                <p><span class="clause-title">Movimientos Permitidos:</span> Solo los legales en GSC (Nivel, MT/MO, Tutor, Crianza, Evento GSC). ¡Verifica en <a href="https://www.pkparaiso.com/pokedex-gsc.php" target="_blank" rel="noopener noreferrer">PkParaíso GSC</a>!</p>
+                <p><span class="clause-title">Movimientos Permitidos:</span> Solo los aprendibles legalmente en GSC (Nivel, MT/MO, Tutor, Crianza, Evento GSC). ¡Verifica en <a href="https://www.pkparaiso.com/pokedex-gsc.php" target="_blank" rel="noopener noreferrer">PkParaíso GSC</a>!</p>
             </div>
             <div class="clause">
                 <p><span class="clause-title">Mecánicas Clave GSC:</span></p>
@@ -445,52 +455,48 @@
             </div>
         </section>
 
-        <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
+         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
         <section id="balance-rules">
             <h2>REGLAS DE EQUILIBRIO HÍBRIDAS</h2>
-            <p>Restricciones personalizadas para un meta más variado:</p>
-            <h3>Restricciones de Pokémon</h3>
-            <div class="clause">
-                <p><span class="clause-title">Pokémon Totalmente Prohibidos (Uber Tier):</span></p>
-                <div class="pokemon-examples">
+            <p>Restricciones personalizadas para un meta más variado y justo:</p>
+            <h3>Pokémon No Permitidos (Banlist Unificada)</h3>
+             <div class="clause">
+                 <p>Los siguientes Pokémon <strong style="color: var(--color-warning);">NO PUEDEN</strong> ser usados en este torneo:</p>
+                 <div class="pokemon-examples">
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/150.gif" alt="Mewtwo Prohibido"><span>Mewtwo<br>(Prohibido)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/151.gif" alt="Mew Prohibido"><span>Mew<br>(Prohibido)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/249.gif" alt="Lugia Prohibido"><span>Lugia<br>(Prohibido)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/250.gif" alt="Ho-Oh Prohibido"><span>Ho-Oh<br>(Prohibido)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/251.gif" alt="Celebi Prohibido"><span>Celebi<br>(Prohibido)</span></div>
-                </div>
-            </div>
-             <div class="clause">
-                 <p><span class="clause-title">Restricciones Adicionales (Custom Ban Tier):</span></p>
-                 <div class="pokemon-examples">
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/143.gif" alt="Snorlax Prohibido"><span>Snorlax<br>(Prohibido)</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/243.gif" alt="Raikou Prohibido"><span>Raikou<br>(Prohibido)</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/145.gif" alt="Zapdos Prohibido"><span>Zapdos<br>(Prohibido)</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/245.gif" alt="Suicune Prohibido"><span>Suicune<br>(Prohibido)</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/144.gif" alt="Articuno Prohibido"><span>Articuno<br>(Prohibido)</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/146.gif" alt="Moltres Prohibido"><span>Moltres<br>(Prohibido)</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/244.gif" alt="Entei Prohibido"><span>Entei<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/144.gif" alt="Articuno Prohibido"><span>Articuno<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/145.gif" alt="Zapdos Prohibido"><span>Zapdos<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/146.gif" alt="Moltres Prohibido"><span>Moltres<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/243.gif" alt="Raikou Prohibido"><span>Raikou<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/244.gif" alt="Entei Prohibido"><span>Entei<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/245.gif" alt="Suicune Prohibido"><span>Suicune<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/143.gif" alt="Snorlax Prohibido"><span>Snorlax<br>(Prohibido)</span></div>
                  </div>
             </div>
+
             <h3>Restricciones de Construcción de Equipo</h3>
             <div class="clause">
-                <p><span class="clause-title">Cláusula de Unicidad de Tipos (¡REGLA CLAVE!):</span> <strong style="color: var(--color-warning);">NO</strong> puedes repetir <strong style="color: var(--color-warning);">NINGÚN</strong> tipo elemental entre los 6 Pokémon de tu equipo. Si un Pokémon es Doble Tipo, ambos cuentan.</p>
+                <p><span class="clause-title">Cláusula de Unicidad de Tipos (¡REGLA CLAVE!):</span> <strong style="color: var(--color-warning);">NO</strong> puedes repetir <strong style="color: var(--color-warning);">NINGÚN</strong> tipo elemental entre los 6 Pokémon de tu equipo. Si un Pokémon es Doble Tipo, ambos tipos cuentan.</p>
                 <p><em>Ejemplo:</em> Llevas a Skarmory (Acero/Volador). Ya no puedes usar otro Acero ni otro Volador.</p>
                 <p>Tipos GSC:</p>
                 <div>
                     <span class="pokemon-type type-normal">Normal</span> <span class="pokemon-type type-fire">Fuego</span> <span class="pokemon-type type-water">Agua</span> <span class="pokemon-type type-grass">Planta</span> <span class="pokemon-type type-electric">Eléctrico</span> <span class="pokemon-type type-ice">Hielo</span> <span class="pokemon-type type-fighting">Lucha</span> <span class="pokemon-type type-poison">Veneno</span> <span class="pokemon-type type-ground">Tierra</span> <span class="pokemon-type type-flying">Volador</span> <span class="pokemon-type type-psychic">Psíquico</span> <span class="pokemon-type type-bug">Bicho</span> <span class="pokemon-type type-rock">Roca</span> <span class="pokemon-type type-ghost">Fantasma</span> <span class="pokemon-type type-dragon">Dragón</span> <span class="pokemon-type type-dark">Siniestro</span> <span class="pokemon-type type-steel">Acero</span>
                 </div>
-                <h4>Ejemplo Equipo Válido:</h4>
+                <h4>Ejemplo Equipo Válido (¡Corregido!):</h4>
                  <div class="pokemon-examples">
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/227.gif" alt="Skarmory"><span>Skarmory (Acero/Volador)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/130.gif" alt="Gyarados"><span>Gyarados (Agua/?)</span></div> <!-- Agua/Volador, pero Volador ya está -->
+                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/134.gif" alt="Vaporeon"><span>Vaporeon (Agua)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/214.gif" alt="Heracross"><span>Heracross (Bicho/Lucha)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/136.gif" alt="Flareon"><span>Flareon (Fuego)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/094.gif" alt="Gengar"><span>Gengar (Fantasma/Veneno)</span></div>
                      <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/076.gif" alt="Golem"><span>Golem (Roca/Tierra)</span></div>
                  </div>
-                 <p><em style="color: var(--color-warning);">¡Error en ejemplo! Gyarados es Agua/Volador. Repetiría Volador. Habría que cambiarlo, p.ej., por Vaporeon (Agua). ¡Así de fácil es equivocarse! ¡Revisad bien!</em></p>
+                 <p><em style="color: var(--color-link);">¡Este equipo SÍ es válido! Tipos usados: Acero, Volador, Agua, Bicho, Lucha, Fuego, Fantasma, Veneno, Roca, Tierra. ¡Ninguno se repite!</em></p>
             </div>
             <div class="clause">
                 <p><span class="clause-title">Límite Pokémon Triple Evolución Final:</span> Máximo <strong>2</strong> Pokémon en tu equipo que sean la forma final de una línea de 3 etapas.</p>
@@ -534,7 +540,7 @@
             <table class="prohibitions-table">
                 <thead><tr><th>Categoría</th><th>Restricciones / Elementos Prohibidos</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Pokémon Prohibidos</strong></td><td>Mewtwo, Mew, Lugia, Ho-Oh, Celebi, Snorlax, Raikou, Zapdos, Suicune, Articuno, Moltres, Entei.</td></tr>
+                    <tr><td><strong>Pokémon Prohibidos</strong></td><td>Mewtwo, Mew, Lugia, Ho-Oh, Celebi, Articuno, Zapdos, Moltres, Raikou, Entei, Suicune, Snorlax.</td></tr>
                     <tr><td><strong>Movimientos Prohibidos</strong></td><td>Doble Equipo, Reducción, Fisura, Perforador, Guillotina.<br>Cualquier movimiento ilegal en GSC para ese Pokémon.</td></tr>
                     <tr><td><strong>Reglas Construcción Equipo (6 Pokémon)</strong></td><td>
                            <ul>
@@ -563,57 +569,44 @@
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
         <section id="controles">
-            <h2>CONTROLES DEL JUEGO (N64 / EMULADOR)</h2>
-            <p>Mapeo típico (puede variar en tu emulador):</p>
+            <h2>CONTROLES DEL JUEGO (N64)</h2>
+            <p>Referencia rápida (puede variar ligeramente en emuladores):</p>
             <div class="controller-layout">
                 <img class="controller-img" src="https://via.placeholder.com/600x300/16213e/ffffff?text=Controles+N64+PLACEHOLDER" alt="Mando N64 con controles para Pokémon Stadium 2">
             </div>
             <div>
-                <h4>Estilo Nintendo:</h4>
+                <h4>Controles Principales:</h4>
                 <ul>
-                    <li>Navegar: <span class="dpad-icon">▲▼◄►</span> / Stick</li>
-                    <li>Confirmar: <span class="btn-n a">A</span></li>
-                    <li>Cancelar: <span class="btn-n b">B</span></li>
-                    <li>Pausa / Confirmar Equipo: <span class="btn-n start">Start</span></li>
-                    <li>Info Stats/Estados: Botones <span class="btn-n c">C</span></li>
-                    <li>Info Movimiento: <span class="btn-n z">Z</span></li>
-                </ul>
-            </div>
-             <div style="margin-top: 20px;">
-                <h4>Estilo Xbox/Similar:</h4>
-                <ul>
-                    <li>Navegar: <span class="dpad-icon">▲▼◄►</span> / Stick Izquierdo</li>
-                    <li>Confirmar: <span class="btn-x a">A</span></li>
-                    <li>Cancelar: <span class="btn-x b">B</span></li>
-                    <li>Acción Secundaria 1: <span class="btn-x x">X</span></li>
-                    <li>Acción Secundaria 2: <span class="btn-x y">Y</span></li>
-                    <li>Pausa / Confirmar Equipo: <span class="btn-x start">Start/Menú</span></li>
-                    <li>Info Stats/Estados: (Mapeado a D-Pad o Stick Derecho usualmente)</li>
-                    <li>Info Movimiento: (Mapeado a Gatillos <span class="btn-x z">LT/RT</span> o Bumpers <span class="btn-x z">LB/RB</span> usualmente)</li>
+                    <li>Navegar Menús: <span class="dpad-icon">▲▼◄►</span> / Stick Analógico</li>
+                    <li>Confirmar / Seleccionar: <span class="btn-n a">A</span></li>
+                    <li>Cancelar / Retroceder: <span class="btn-n b">B</span></li>
+                    <li>Pausa / Confirmar Selección Equipo: <span class="btn-n start">Start</span></li>
+                    <li>Ver Info Stats/Estados (Batalla): Botones <span class="btn-n c">C</span> (← → ↑ ↓)</li>
+                    <li>Ver Info Detallada Movimiento (Batalla): <span class="btn-n z">Z</span> (Gatillo)</li>
                 </ul>
             </div>
             <h3>Selección de Equipo (3 de 6) - Proceso Clave</h3>
             <ol>
-                <li>Navega (<span class="dpad-icon">▲▼◄►</span>/Stick) sobre tus 6.</li>
-                <li>Pulsa Confirmar (<span class="btn-n a">A</span>/<span class="btn-x a">A</span>) en tu líder (aparece '1').</li>
-                <li>Pulsa Confirmar en el segundo (aparece '2').</li>
-                <li>Pulsa Confirmar en el tercero (aparece '3').</li>
-                <li>Usa Cancelar (<span class="btn-n b">B</span>/<span class="btn-x b">B</span>) para deseleccionar si te equivocas.</li>
-                <li>Confirma tu trío y orden con <span class="btn-n start">Start</span>/<span class="btn-x start">Start</span>.</li>
+                <li>Navega (<span class="dpad-icon">▲▼◄►</span>/Stick) sobre tus 6 Pokémon.</li>
+                <li>Pulsa <span class="btn-n a">A</span> en tu Pokémon líder (aparece '1').</li>
+                <li>Pulsa <span class="btn-n a">A</span> en el segundo Pokémon (aparece '2').</li>
+                <li>Pulsa <span class="btn-n a">A</span> en el tercer Pokémon (aparece '3').</li>
+                <li>Pulsa <span class="btn-n b">B</span> sobre un Pokémon elegido para deseleccionar/cambiar.</li>
+                <li>Confirma tu trío y orden final con <span class="btn-n start">Start</span>.</li>
             </ol>
             <div class="tip">
-                <p><strong>¡Practica esto!</strong> La selección bajo presión puede llevar a errores.</p>
+                <p><strong>¡Practica esto!</strong> La selección es rápida y crucial para la estrategia.</p>
             </div>
         </section>
 
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
         <section id="registro-equipo">
-            <h2>REGISTRO DE EQUIPO 📝</h2>
+            <h2>REGISTRO OBLIGATORIO DE EQUIPO 📝</h2>
             <p>El registro de tu equipo de 6 es <strong>TOTALMENTE OBLIGATORIO</strong> antes de la fecha límite.</p>
             <ul>
                 <li><strong>Detalles Necesarios:</strong> 6 Pokémon, Objeto equipado (o "Ninguno"), 4 Movimientos por Pokémon.</li>
-                <li><strong>Cumplimiento Estricto:</strong> Verifica que TODO sea legal en GSC y cumpla las Reglas Híbridas (Tipos únicos, Límites, etc.).</li>
+                <li><strong>Cumplimiento Estricto:</strong> Verifica que TODO sea legal en GSC y cumpla las Reglas Híbridas (Tipos únicos, Límites, Objetos, etc.).</li>
                 <li><strong>Equipo Fijo (Post-Registro):</strong> Una vez asignadas las stats aleatorias y comenzado el torneo, este es tu equipo.</li>
                 <li><strong>Actualizaciones Pre-Torneo:</strong> ¿Cambiaste de idea? ¡No hay problema! Puedes reenviar el formulario de registro antes de la fecha límite. Usa un nombre de equipo distinto (Ej: "Equipo Alfa v2", "Mi Equipo Final") para que sepamos cuál es la versión definitiva.</li>
             </ul>
@@ -630,8 +623,8 @@
         <div class="pokeball-divider"><div class="pokeball-icon"></div></div>
 
         <section id="contacto">
-            <h2>CONTACTO 📞</h2>
-            <p>Si después de leer todo esto aún tienes dudas, contacta con la organización:</p>
+            <h2>CONTACTO ORGANIZACIÓN 📞</h2>
+            <p>Si después de leer detenidamente TODO esto aún tienes dudas, contacta por los canales oficiales:</p>
             <div class="contact-methods">
                 <a href="mailto:tu-email@ejemplo.com" class="contact-method">
                     <span class="icon">📧</span> Email (PLACEHOLDER_EMAIL)
@@ -639,6 +632,7 @@
                 <a href="#" target="_blank" rel="noopener noreferrer" class="contact-method">
                     <span class="icon">💬</span> Discord (PLACEHOLDER_LINK)
                 </a>
+                 <!-- Añade más si es necesario -->
             </div>
         </section>
     </div>
@@ -646,7 +640,7 @@
     <footer>
         <div class="container">
             <p>© <span id="current-year"></span> Torneo Pokémon Stadium 2 - Reglas Híbridas GSC. Organizado por [Tu Nombre/Grupo PLACEHOLDER].</p>
-            <p>Pokémon y marcas relacionadas son propiedad de Nintendo, Creatures Inc., GAME FREAK Inc.</p>
+            <p>Pokémon y marcas relacionadas son propiedad de Nintendo, Creatures Inc., GAME FREAK Inc. Este es un evento no oficial creado por fans.</p>
         </div>
     </footer>
 
