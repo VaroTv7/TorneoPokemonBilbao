@@ -75,7 +75,7 @@
             color: var(--color-link);
             font-weight: 700;
         }
-        h4 { /* Added style for H4 */
+        h4 {
              font-size: 1.1rem;
              margin: 20px 0 10px;
              color: var(--color-text);
@@ -182,7 +182,7 @@
             border-top: 5px solid var(--color-accent);
             box-shadow: 0 -4px 12px var(--shadow-medium);
         }
-        .clause { /* Used now for specific rule boxes */
+        .clause {
             background-color: rgba(255, 204, 0, 0.15);
             border-radius: var(--border-radius);
             padding: 15px 20px;
@@ -257,13 +257,13 @@
         .pokemon-example:hover::before { opacity: 1; }
         .pokemon-example:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 16px var(--shadow-medium); border-color: var(--color-accent); }
         .pokemon-example img {
-            width: 75px;
-            height: 75px;
+            width: 96px; /* Increased size for new sprites */
+            height: 96px;
             margin-bottom: 10px;
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.05); /* Lighter background */
             border-radius: 50%;
-            padding: 8px;
-            image-rendering: pixelated;
+            padding: 0px; /* No padding for these sprites */
+            image-rendering: pixelated; /* Keep pixelated look if desired */
             z-index: 1;
             transition: transform 0.3s ease;
         }
@@ -303,7 +303,6 @@
         .btn-n.c { background-color: #f39c12; }
         .dpad-icon { font-size: 1.3em; line-height: 1; margin: 0 3px; display: inline-block; color: #bdc3c7; text-shadow: 1px 1px 1px #2c3e50;}
 
-        /* New block style for standard clauses */
         .standard-clauses-block {
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: var(--border-radius);
@@ -324,12 +323,12 @@
             border-bottom: none;
             padding-bottom: 0;
         }
-        .standard-clauses-block .clause-title { /* Keep title styling */
+        .standard-clauses-block .clause-title {
              display: inline-block;
              margin-right: 8px;
-             font-size: 1em; /* Adjust size if needed */
+             font-size: 1em;
         }
-         .standard-clauses-block p::before { /* Optional icon for each clause */
+         .standard-clauses-block p::before {
             content: '»';
             color: var(--color-accent);
             position: absolute;
@@ -339,7 +338,8 @@
 
 
         @media (max-width: 992px) {
-             .pokemon-example { width: calc(16.66% - 15px); } /* Try to fit 6 */
+             .pokemon-example { width: calc(16.66% - 15px); padding: 15px;} /* Try to fit 6 */
+             .pokemon-example img {width: 75px; height: 75px;} /* Adjust size */
         }
 
         @media (max-width: 768px) {
@@ -349,8 +349,8 @@
             .button { width: 100%; padding: 16px; font-size: 1rem; }
             #header-banner-img { height: auto; border-width: 3px; }
             .pokemon-examples { gap: 15px; }
-             .pokemon-example { width: calc(33.33% - 10px); } /* 3 per row */
-             .pokemon-example img { width: 60px; height: 60px; }
+             .pokemon-example { width: calc(33.33% - 10px); padding: 12px;} /* 3 per row */
+             .pokemon-example img { width: 70px; height: 70px; } /* Adjust size */
             .prohibitions-table th, .prohibitions-table td { padding: 10px 12px; font-size: 0.9rem;}
             .prohibitions-table th { font-size: 0.7rem; }
              .pokeball-icon { width: 35px; height: 35px; margin: 0 15px; border-width: 2px;}
@@ -358,8 +358,8 @@
              .pokeball-icon::after { width: 8px; height: 8px; border-width: 2px;}
         }
         @media (max-width: 576px) {
-             .pokemon-example { width: calc(50% - 10px); } /* 2 per row */
-             .pokemon-example img { width: 55px; height: 55px; }
+             .pokemon-example { width: calc(50% - 10px); padding: 10px;} /* 2 per row */
+             .pokemon-example img { width: 80px; height: 80px; } /* Increase size slightly for 2 per row */
              li { padding-left: 25px; } li::before { left: 0px;}
               ol li::before { left: 0px;}
         }
@@ -371,8 +371,7 @@
             .controller-layout { padding: 15px; }
             .prohibitions-table th, .prohibitions-table td { font-size: 0.85rem;}
             body { line-height: 1.5; }
-             .pokemon-example { width: calc(50% - 10px); } /* Keep 2 per row */
-             .pokemon-example img { width: 50px; height: 50px; }
+             .pokemon-example img { width: 70px; height: 70px; } /* Adjust size */
         }
         .table-of-contents { background-color: rgba(0, 0, 0, 0.25); border-radius: var(--border-radius); padding: 25px; margin: 25px 0; border: 1px solid var(--color-border);}
         .table-of-contents h3 { margin-top: 0; margin-bottom: 20px; color: var(--color-accent); font-family: 'Press Start 2P', cursive; font-size: 1.2rem; text-align: center; }
@@ -507,18 +506,18 @@
              <div class="clause">
                  <p>Los siguientes Pokémon <strong style="color: var(--color-warning);">NO PUEDEN</strong> ser usados en este torneo:</p>
                  <div class="pokemon-examples">
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/150.gif" alt="Mewtwo Prohibido"><span>Mewtwo<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/151.gif" alt="Mew Prohibido"><span>Mew<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/249.gif" alt="Lugia Prohibido"><span>Lugia<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/250.gif" alt="Ho-Oh Prohibido"><span>Ho-Oh<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/251.gif" alt="Celebi Prohibido"><span>Celebi<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/144.gif" alt="Articuno Prohibido"><span>Articuno<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/145.gif" alt="Zapdos Prohibido"><span>Zapdos<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/146.gif" alt="Moltres Prohibido"><span>Moltres<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/243.gif" alt="Raikou Prohibido"><span>Raikou<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/244.gif" alt="Entei Prohibido"><span>Entei<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/245.gif" alt="Suicune Prohibido"><span>Suicune<br>(Prohibido)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/143.gif" alt="Snorlax Prohibido"><span>Snorlax<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/mewtwo.gif" alt="Sprite de Mewtwo"><span>Mewtwo<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/mew.gif" alt="Sprite de Mew"><span>Mew<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/lugia.gif" alt="Sprite de Lugia"><span>Lugia<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/ho-oh.gif" alt="Sprite de Ho-Oh"><span>Ho-Oh<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/celebi.gif" alt="Sprite de Celebi"><span>Celebi<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/articuno.gif" alt="Sprite de Articuno"><span>Articuno<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/zapdos.gif" alt="Sprite de Zapdos"><span>Zapdos<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/moltres.gif" alt="Sprite de Moltres"><span>Moltres<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/raikou.gif" alt="Sprite de Raikou"><span>Raikou<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/entei.gif" alt="Sprite de Entei"><span>Entei<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/suicune.gif" alt="Sprite de Suicune"><span>Suicune<br>(Prohibido)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/snorlax.gif" alt="Sprite de Snorlax"><span>Snorlax<br>(Prohibido)</span></div>
                  </div>
             </div>
 
@@ -532,23 +531,23 @@
                 </div>
                 <h4>Ejemplo Equipo Válido:</h4>
                  <div class="pokemon-examples">
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/227.gif" alt="Skarmory"><span>Skarmory (Acero/Volador)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/134.gif" alt="Vaporeon"><span>Vaporeon (Agua)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/214.gif" alt="Heracross"><span>Heracross (Bicho/Lucha)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/136.gif" alt="Flareon"><span>Flareon (Fuego)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/094.gif" alt="Gengar"><span>Gengar (Fantasma/Veneno)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/076.gif" alt="Golem"><span>Golem (Roca/Tierra)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/skarmory.gif" alt="Sprite de Skarmory"><span>Skarmory (Acero/Volador)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/vaporeon.gif" alt="Sprite de Vaporeon"><span>Vaporeon (Agua)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/heracross.gif" alt="Sprite de Heracross"><span>Heracross (Bicho/Lucha)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/flareon.gif" alt="Sprite de Flareon"><span>Flareon (Fuego)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/gengar.gif" alt="Sprite de Gengar"><span>Gengar (Fantasma/Veneno)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/golem.gif" alt="Sprite de Golem"><span>Golem (Roca/Tierra)</span></div>
                  </div>
                  <p><em style="color: var(--color-link);">¡Este equipo SÍ es válido! Tipos usados: Acero, Volador, Agua, Bicho, Lucha, Fuego, Fantasma, Veneno, Roca, Tierra. ¡Ninguno se repite!</em></p>
 
                 <h4>Ejemplo Equipo NO Válido:</h4>
                  <div class="pokemon-examples">
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/157.gif" alt="Typhlosion"><span>Typhlosion (Fuego)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/229.gif" alt="Houndoom"><span>Houndoom (Fuego/Siniestro)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/197.gif" alt="Umbreon"><span>Umbreon (Siniestro)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/134.gif" alt="Vaporeon"><span>Vaporeon (Agua)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/212.gif" alt="Scizor"><span>Scizor (Acero/Bicho)</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/068.gif" alt="Machamp"><span>Machamp (Lucha)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/typhlosion.gif" alt="Sprite de Typhlosion"><span>Typhlosion (Fuego)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/houndoom.gif" alt="Sprite de Houndoom"><span>Houndoom (Fuego/Siniestro)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/umbreon.gif" alt="Sprite de Umbreon"><span>Umbreon (Siniestro)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/vaporeon.gif" alt="Sprite de Vaporeon"><span>Vaporeon (Agua)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/scizor.gif" alt="Sprite de Scizor"><span>Scizor (Acero/Bicho)</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/machamp.gif" alt="Sprite de Machamp"><span>Machamp (Lucha)</span></div>
                  </div>
                  <p><em style="color: var(--color-warning);">¡Este equipo NO es válido! Repite el tipo Fuego (Typhlosion, Houndoom) y el tipo Siniestro (Houndoom, Umbreon). ¡Incumple la Unicidad de Tipos!</em></p>
             </div>
@@ -556,24 +555,24 @@
                 <p><span class="clause-title">Límite Pokémon Triple Evolución Final:</span> Máximo <strong>2</strong> Pokémon en tu equipo que sean la forma final de una línea de 3 etapas.</p>
                  <h3>Ejemplos afectados (Máx. 2 de estos o similares):</h3>
                 <div class="pokemon-examples">
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/154.gif" alt="Meganium"><span>Meganium</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/006.gif" alt="Charizard"><span>Charizard</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/149.gif" alt="Dragonite"><span>Dragonite</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/181.gif" alt="Ampharos"><span>Ampharos</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/076.gif" alt="Golem"><span>Golem</span></div>
-                     <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/065.gif" alt="Alakazam"><span>Alakazam</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/meganium.gif" alt="Sprite de Meganium"><span>Meganium</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/charizard.gif" alt="Sprite de Charizard"><span>Charizard</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/dragonite.gif" alt="Sprite de Dragonite"><span>Dragonite</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/ampharos.gif" alt="Sprite de Ampharos"><span>Ampharos</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/golem.gif" alt="Sprite de Golem"><span>Golem</span></div>
+                     <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/alakazam.gif" alt="Sprite de Alakazam"><span>Alakazam</span></div>
                 </div>
             </div>
              <div class="clause">
                 <p><span class="clause-title">Límite Pokémon Iniciales:</span> Máximo <strong>1</strong> Pokémon perteneciente a una línea evolutiva inicial de Kanto O Johto.</p>
                 <h3>Ejemplos (Solo 1 línea evolutiva por equipo):</h3>
                 <div class="pokemon-examples">
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/003.gif" alt="Venusaur"><span>Línea Venusaur</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/006.gif" alt="Charizard"><span>Línea Charizard</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/009.gif" alt="Blastoise"><span>Línea Blastoise</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/154.gif" alt="Meganium"><span>Línea Meganium</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/157.gif" alt="Typhlosion"><span>Línea Typhlosion</span></div>
-                    <div class="pokemon-example"><img src="https://www.pkparaiso.com/pokedex/gold/160.gif" alt="Feraligatr"><span>Línea Feraligatr</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/venusaur.gif" alt="Sprite de Venusaur"><span>Línea Venusaur</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/charizard.gif" alt="Sprite de Charizard"><span>Línea Charizard</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/blastoise.gif" alt="Sprite de Blastoise"><span>Línea Blastoise</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/meganium.gif" alt="Sprite de Meganium"><span>Línea Meganium</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/typhlosion.gif" alt="Sprite de Typhlosion"><span>Línea Typhlosion</span></div>
+                    <div class="pokemon-example"><img src="https://projectpokemon.org/images/normal-sprite/feraligatr.gif" alt="Sprite de Feraligatr"><span>Línea Feraligatr</span></div>
                 </div>
             </div>
             <h3>Cláusulas Estándar de Combate</h3>
